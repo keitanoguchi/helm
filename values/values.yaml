@@ -1,0 +1,11 @@
+pdbs:
+  - namespace: default
+    minAvailable: null
+    maxUnavailable: 1
+    labels: 
+      env: env_1
+  - namespace: kube-system
+    minAvailable: null
+    maxUnavailable: 1
+    labels:
+      env: env_2

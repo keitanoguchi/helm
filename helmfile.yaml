@@ -1,0 +1,5 @@
+releases:
+  - name: pdb
+    chart: ./charts/pdb
+    values:
+      - ./values/values.yaml

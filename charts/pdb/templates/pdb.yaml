@@ -1,0 +1,18 @@
+{{- range .Values.pdbs }}
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: pdb
+  namespace: {{ .namespace }}
+spec:
+{{- with .minAvailable }}
+  minAvailable: {{ . }}
+{{- end }}
+{{- with .maxUnavailable }}
+  maxUnavailable: {{ . }}
+{{- end }}
+  selector:  
+    matchLabels:
+      {{ .labels | toYaml | nindent 6 }}
+{{- end }}
